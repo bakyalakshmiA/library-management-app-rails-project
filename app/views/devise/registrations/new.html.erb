@@ -8,6 +8,7 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -15,7 +16,12 @@
 
   <div class="field">
     <%= f.label :phone_number %><br />
-    <%= f.text_field :phone_number %>
+    <%= f.number_field :phone_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :role %><br />
+    <%= f.select :role, User.roles.keys.map { |role| [role.titleize, role] }, prompt: 'Select your role' %>
   </div>
 
   <div class="field">
