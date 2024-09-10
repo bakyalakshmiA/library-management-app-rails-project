@@ -2,6 +2,7 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_book, only: [ :update, :destroy]
 
+  skip_before_action :verify_authenticity_token, unless: :api_request?
   def index
     books = Book.all
     render json: books, status: :ok
@@ -57,4 +58,9 @@ class BooksController < ApplicationController
     params.require(:book).permit(:isbn, :title, :author, :language ,:quantity)
   end
 
+  private
+
+  def api_request?
+    request.format.json?
+  end
 end

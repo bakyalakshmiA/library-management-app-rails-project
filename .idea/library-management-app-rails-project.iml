@@ -149,6 +149,7 @@
         <option value="responders_controller" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
+        <option value="sidekiq:job" />
         <option value="system_test" />
         <option value="task" />
         <option value="test_unit:generator" />
@@ -183,6 +184,7 @@
         <option value="responders_controller" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
+        <option value="sidekiq:job" />
         <option value="system_test" />
         <option value="task" />
         <option value="test_unit:generator" />
