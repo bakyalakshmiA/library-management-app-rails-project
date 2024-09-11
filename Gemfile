@@ -71,4 +71,5 @@ gem "sinatra"
 
 gem 'redis-namespace'
 
+gem "ember-cli-rails"
 

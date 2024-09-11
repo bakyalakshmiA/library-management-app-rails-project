@@ -1,6 +1,8 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
 
+  mount_ember_app :frontend, to: "/books"
+
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
@@ -13,4 +15,6 @@ Rails.application.routes.draw do
     patch 'return', on: :collection
     get 'borrowed_books'
   end
+
+
 end

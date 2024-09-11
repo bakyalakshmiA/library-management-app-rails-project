@@ -134,6 +134,8 @@
         <option value="devise:controllers" />
         <option value="devise:install" />
         <option value="devise:views" />
+        <option value="ember:heroku" />
+        <option value="ember:init" />
         <option value="generator" />
         <option value="helper" />
         <option value="integration_test" />
@@ -147,21 +149,6 @@
         <option value="resource" />
         <option value="responders:install" />
         <option value="responders_controller" />
-        <option value="rspec:channel" />
-        <option value="rspec:controller" />
-        <option value="rspec:feature" />
-        <option value="rspec:generator" />
-        <option value="rspec:helper" />
-        <option value="rspec:install" />
-        <option value="rspec:integration" />
-        <option value="rspec:job" />
-        <option value="rspec:mailbox" />
-        <option value="rspec:mailer" />
-        <option value="rspec:model" />
-        <option value="rspec:request" />
-        <option value="rspec:scaffold" />
-        <option value="rspec:system" />
-        <option value="rspec:view" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
         <option value="sidekiq:job" />
@@ -184,6 +171,8 @@
         <option value="devise:controllers" />
         <option value="devise:install" />
         <option value="devise:views" />
+        <option value="ember:heroku" />
+        <option value="ember:init" />
         <option value="generator" />
         <option value="helper" />
         <option value="integration_test" />
@@ -197,21 +186,6 @@
         <option value="resource" />
         <option value="responders:install" />
         <option value="responders_controller" />
-        <option value="rspec:channel" />
-        <option value="rspec:controller" />
-        <option value="rspec:feature" />
-        <option value="rspec:generator" />
-        <option value="rspec:helper" />
-        <option value="rspec:install" />
-        <option value="rspec:integration" />
-        <option value="rspec:job" />
-        <option value="rspec:mailbox" />
-        <option value="rspec:mailer" />
-        <option value="rspec:model" />
-        <option value="rspec:request" />
-        <option value="rspec:scaffold" />
-        <option value="rspec:system" />
-        <option value="rspec:view" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
         <option value="sidekiq:job" />
@@ -453,6 +427,13 @@
           <RakeTaskImpl id="dev">
             <subtasks>
               <RakeTaskImpl description="Toggle development mode caching on/off" fullCommand="dev:cache" id="cache" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="ember">
+            <subtasks>
+              <RakeTaskImpl description="Runs `ember build` for each App" fullCommand="ember:compile" id="compile" />
+              <RakeTaskImpl description="Installs each EmberCLI app's dependencies" fullCommand="ember:install" id="install" />
+              <RakeTaskImpl description="Runs `ember test` for each App" fullCommand="ember:test" id="test" />
             </subtasks>
           </RakeTaskImpl>
           <RakeTaskImpl description="Print out all defined initializers in the order they are invoked by Rails" fullCommand="initializers" id="initializers" />
