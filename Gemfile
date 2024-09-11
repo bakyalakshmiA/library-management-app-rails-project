@@ -68,3 +68,7 @@ gem "devise"
 gem "sidekiq"
 
 gem "sinatra"
+
+gem 'redis-namespace'
+
+

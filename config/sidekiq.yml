@@ -1,0 +1,7 @@
+:concurrency: 1
+:queues:
+  - default
+  - mailers
+
+  - devapp_default
+  - devapp_mailers

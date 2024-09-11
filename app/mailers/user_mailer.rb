@@ -5,15 +5,16 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.new_user_email.subject
   #
-  default from: 'notifications@example.com'
-
   def new_user_email(user)
+    puts "here in new user mail"
     @user = user
-    admins = User.where(admin: true);
+    admins = User.where(role: "admin")
+    puts "admins array"
+    puts admins.inspect
+
     admins.each do |admin|
       mail(to: admin.email, subject: 'New User Signed Up')
     end
-    #@greeting = "Hi"
-    # mail to: "to@example.org"
   end
 end
+

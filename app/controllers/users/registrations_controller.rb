@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
@@ -10,9 +9,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  puts "here in create user post controller"
+  def create
+    puts "in create user"
+    super do |resource|
+      puts "here in register method"
+      Rails.logger.debug "Entering UserRegistrationService.call with resource: #{resource.inspect}"
+      UserRegistrationService.call(resource)
+    end
+  end
 
   # GET /resource/edit
   # def edit
