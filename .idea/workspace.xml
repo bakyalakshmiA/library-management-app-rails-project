@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efa356ea-ab9c-4169-bdcd-3a5e303133ee" name="Changes" comment="" />
+    <list default="true" id="efa356ea-ab9c-4169-bdcd-3a5e303133ee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dump.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/application.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/application.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/config/environment.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/config/environment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +41,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/RubyMine.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -141,7 +151,8 @@
       <workItem from="1725620911391" duration="1353000" />
       <workItem from="1725622520266" duration="1854000" />
       <workItem from="1725817728499" duration="181000" />
-      <workItem from="1725818511771" duration="35688000" />
+      <workItem from="1725818511771" duration="47044000" />
+      <workItem from="1726121273035" duration="3045000" />
     </task>
     <servers />
   </component>

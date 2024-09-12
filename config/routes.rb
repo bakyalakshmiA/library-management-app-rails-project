@@ -1,7 +1,7 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
 
-  mount_ember_app :frontend, to: "/books"
+  mount_ember_app :frontend, to: "/a"
 
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'
@@ -10,11 +10,10 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :books do
+  resources :books, only: [:index, :show, :create, :update, :destroy] do
     post 'borrow', on: :collection
     patch 'return', on: :collection
     get 'borrowed_books'
   end
-
 
 end

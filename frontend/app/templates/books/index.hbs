@@ -1,0 +1,66 @@
+{{page-title "books"}}
+{{outlet}}
+
+<div class="layout-row">
+  <div class="flex table-example">
+    <h2>Books</h2>
+
+{{!--if filter enabled then send the param filter here--}}
+    {{#if enableFilter}}
+      <DataTable @content={{model}} @sort={{sort}} @page={{page}} @size={{size}} @filter={{filter}} @enableSizes={{enableSizes}} @lineNumbers={{enableLineNumbers}} as |t|>
+        <t.menu as |menu|>
+          <menu.selected as |selection datatable|>
+            <PaperButton @onClick={{action "delete" selection datatable}} @accent={{true}} @noInk={{true}}>Delete</PaperButton>
+          </menu.selected>
+        </t.menu>
+        <t.content as |c|>
+          <c.header>
+            {{th-sortable field='title' currentSorting=sort label='Title'}}
+            <th>Author</th>
+            {{th-sortable field='isbn' currentSorting=sort label='ISBN'}}
+            {{th-sortable field='language' currentSorting=sort label='Language'}}
+            {{th-sortable field='quantity' currentSorting=sort label='Language'}}
+            <th># pages</th>
+          </c.header>
+          <c.body as |row|>
+            <td>{{row.title}}</td>
+            <td>{{row.author}}</td>
+            <td>{{row.isbn}}</td>
+            <td>{{row.language}}</td>
+            <td>{{row.isbn}}</td>
+{{!--             <td>{{moment-format row.publicationDate 'MM/DD/YYYY'}}</td> --}}
+          </c.body>
+        </t.content>
+      </DataTable>
+    {{else}}
+      <DataTable @content={{model}} @sort={{sort}} @page={{page}} @size={{size}} @enableSizes={{enableSizes}} @lineNumbers={{enableLineNumbers}} as |t|>
+        <t.menu as |menu|>
+{{!--           {{#menu.general}} --}}
+{{!--             {{#paper-button onClick=(action "export") accent=true noInk=true}}Export{{/paper-button}} --}}
+{{!--             {{#paper-button onClick=(action "print") accent=true noInk=true}}Print{{/paper-button}} --}}
+{{!--           {{/menu.general}} --}}
+          <menu.selected as |selection datatable|>
+            <PaperButton @onClick={{action "delete" selection datatable}} @accent={{true}} @noInk={{true}}>Delete</PaperButton>
+          </menu.selected>
+        </t.menu>
+        <t.content as |c|>
+          <c.header>
+            {{th-sortable field='title' currentSorting=sort label='Title'}}
+            <th>Author</th>
+            {{th-sortable field='isbn' currentSorting=sort label='ISBN'}}
+            {{th-sortable field='language' currentSorting=sort label='Language'}}
+            <th># pages</th>
+          </c.header>
+          <c.body as |row|>
+            <td>{{row.title}}</td>
+            <td>{{row.author}}</td>
+            <td><a href="https://www.google.be/#q=isbn:+{{row.isbn}}&*">{{row.isbn}}</a></td>
+            <td>{{row.language}}</td>
+            <td>123</td>
+          </c.body>
+        </t.content>
+      </DataTable>
+    {{/if}}
+  </div>
+</div>
+
