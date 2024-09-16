@@ -3,6 +3,15 @@
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
+
+  def current_user_data
+    if user_signed_in?
+      render json: { user: current_user.as_json(only: [:id, :email, :name, :role]) }
+    else
+      render json: { error: 'Not authenticated' }, status: :unauthorized
+    end
+  end
+
   # GET /resource/sign_in
   # def new
   #   super

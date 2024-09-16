@@ -13,6 +13,19 @@ export default class BooksIndexRoute extends Route {
   //     console.log('Session is not authenticated.');
   //   }
   // }
+
+  setupController(controller, model) {
+    super.setupController(controller, model);
+    // Define the separate properties
+    controller.set('bookColumns', [
+      { label: 'Title', field: 'title', sortable: true },
+      { label: 'Author', field: 'author', sortable: false },
+      { label: 'ISBN', field: 'isbn', sortable: true },
+      { label: 'Language', field: 'language', sortable: true },
+      // { label: '# Pages', field: 'pages', sortable: false },
+    ]);
+  }
+
   async model() {
     const config = getOwner(this).resolveRegistration('config:environment');
     const url = `${config.baseURL}/books/`;
@@ -23,7 +36,6 @@ export default class BooksIndexRoute extends Route {
           Accept: 'application/json',
         },
       });
-
       if (!response.ok) {
         return;
       }

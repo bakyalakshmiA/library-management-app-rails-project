@@ -6,7 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="efa356ea-ab9c-4169-bdcd-3a5e303133ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/books_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/books_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/users/sessions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users/sessions_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/components/web-comp/table-view/component.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/web-comp/table-view/component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/components/web-comp/table-view/template.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/web-comp/table-view/template.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/routes/books/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/books/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/services/books.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/styles/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/application.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/application.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/books/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/books/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tests/unit/services/books-test.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +174,7 @@
       <workItem from="1725818511771" duration="47044000" />
       <workItem from="1726121273035" duration="9674000" />
       <workItem from="1726150469445" duration="469000" />
-      <workItem from="1726205923007" duration="37341000" />
+      <workItem from="1726205923007" duration="56165000" />
     </task>
     <servers />
   </component>

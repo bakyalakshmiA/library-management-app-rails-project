@@ -10,10 +10,12 @@ class BooksController < ApplicationController
 
   def create
     book_params = params.require(:book).permit(
+      :isbn,
       :book_id,
       :title,
       :author,
-      :language
+      :language,
+      :quantity
     )
     book = Book.new(book_params)
 
@@ -26,7 +28,8 @@ class BooksController < ApplicationController
     book_params = params.require(:book).permit(
       :title,
       :author,
-      :language
+      :language,
+      :quantity
     )
     @book.update(book_params)
     render json: @book, status: :ok

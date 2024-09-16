@@ -1,0 +1,36 @@
+import Service from '@ember/service';
+import { task } from 'ember-concurrency';
+import { getOwner } from '@ember/application';
+
+export default class BooksServiceService extends Service {
+  @(task(function* (data) {
+    const csrfToken = document
+      .querySelector('meta[name="csrf-token"]')
+      .getAttribute('content');
+
+    const config = getOwner(this).resolveRegistration('config:environment');
+    const url = `${config.baseURL}/books#create`;
+
+    try {
+      const response = yield fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'X-CSRF-Token': csrfToken,
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        return;
+      }
+
+      const result = yield response.json();
+      return result;
+    } catch (error) {
+      console.error('Error creating book:', error);
+    }
+  }).drop())
+  createBook;
+}
