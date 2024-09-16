@@ -1,9 +1,18 @@
-
 import Route from '@ember/routing/route';
 import { getOwner } from '@ember/application';
 import fetch from 'fetch';
+// import { inject as service } from '@ember/service';
 
 export default class BooksIndexRoute extends Route {
+  // @service session;
+
+  // beforeModel() {
+  //   super.beforeModel(...arguments);
+  //
+  //   if (!this.session.isAuthenticated) {
+  //     console.log('Session is not authenticated.');
+  //   }
+  // }
   async model() {
     const config = getOwner(this).resolveRegistration('config:environment');
     const url = `${config.baseURL}/books/`;
@@ -18,7 +27,6 @@ export default class BooksIndexRoute extends Route {
       if (!response.ok) {
         return;
       }
-
       return await response.json();
     } catch (error) {
       console.error('Error fetching data:', error);

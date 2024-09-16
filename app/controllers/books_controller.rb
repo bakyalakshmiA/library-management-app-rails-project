@@ -4,7 +4,7 @@ class BooksController < ApplicationController
 
   skip_before_action :verify_authenticity_token, unless: :api_request?
   def index
-    books = Book.all
+    books = @books = Book.cached_all_books
     render json: books, status: :ok
   end
 

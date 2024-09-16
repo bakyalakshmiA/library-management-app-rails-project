@@ -1,5 +1,7 @@
 {
   "name": "library-management-app-rails-project",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
 }

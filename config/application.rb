@@ -13,6 +13,7 @@ module LibraryManagementAppRailsProject
 
     config.autoload_paths << Rails.root.join('app/services')
 
+    config.cache_store = :mem_cache_store
     config.active_job.queue_adapter = :sidekiq
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

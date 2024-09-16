@@ -1,6 +1,8 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
 
+  root to: redirect('/a/home')
+
   mount_ember_app :frontend, to: "/a"
 
   authenticate :user, lambda { |u| u.admin? } do

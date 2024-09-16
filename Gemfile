@@ -73,3 +73,14 @@ gem 'redis-namespace'
 
 gem "ember-cli-rails"
 
+gem 'redis-rails'
+
+gem 'dalli', '~> 2.7'
+
+gem 'bootstrap', '~> 4.3'
+
+gem 'sassc-rails'
+
+gem 'jquery-rails'
+
+

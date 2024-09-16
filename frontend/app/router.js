@@ -10,4 +10,5 @@ Router.map(function () {
   this.route('books', function () {
     this.route('index', { path: '/' });
   });
+  this.route('home');
 });
