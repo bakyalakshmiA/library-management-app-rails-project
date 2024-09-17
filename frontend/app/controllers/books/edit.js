@@ -1,3 +1,3 @@
-import Controller from '@ember/controller';
+import ApplicationController from '../application';
 
-export default class BooksEditController extends Controller {}
+export default class BooksEditController extends ApplicationController {}

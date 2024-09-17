@@ -3,7 +3,6 @@
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
-
   def current_user_data
     if user_signed_in?
       render json: { user: current_user.as_json(only: [:id, :email, :name, :role]) }

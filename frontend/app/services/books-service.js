@@ -25,12 +25,38 @@ export default class BooksServiceService extends Service {
       if (!response.ok) {
         return;
       }
-
-      const result = yield response.json();
-      return result;
+      return yield response.json();
     } catch (error) {
       console.error('Error creating book:', error);
     }
   }).drop())
   createBook;
+
+  @(task(function* (bookIds) {
+    const csrfToken = document
+      .querySelector('meta[name="csrf-token"]')
+      .getAttribute('content');
+
+    const config = getOwner(this).resolveRegistration('config:environment');
+    const url = `${config.baseURL}/books/borrow`;
+    try {
+      const response = yield fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'X-CSRF-Token': csrfToken,
+        },
+        body: JSON.stringify({ book_ids: bookIds }),
+      });
+      if (!response.ok) {
+        return;
+      }
+      return yield response.json();
+    } catch (error) {
+      console.error('Error borrowing books:', error);
+      return [];
+    }
+  }).drop())
+  borrowBooks;
 }

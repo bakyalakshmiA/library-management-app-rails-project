@@ -1,27 +1,16 @@
-import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
+import ApplicationController from '../application';
 
-export default class BooksNewController extends Controller {
+export default class BooksNewController extends ApplicationController {
   @service booksService;
-  @service authenticationService;
 
   @tracked bookTitle = '';
   @tracked author = '';
   @tracked isbn = '';
   @tracked language = '';
   @tracked quantity = '';
-
-  @action
-  async loadUser() {
-    this.authenticationService.loadCurrentUser();
-  }
-
-  constructor() {
-    super(...arguments);
-    this.loadUser();
-  }
 
   get disableSubmit() {
     // Check if any of the tracked properties are empty
@@ -42,7 +31,6 @@ export default class BooksNewController extends Controller {
       quantity: parseInt(this.quantity),
     };
   }
-
 
   @action
   async submitBook() {

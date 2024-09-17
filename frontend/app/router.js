@@ -15,4 +15,6 @@ Router.map(function () {
   this.route('home');
 
   this.route('posts', function () {});
+  this.route('users');
+  this.route('borrowed_books');
 });
