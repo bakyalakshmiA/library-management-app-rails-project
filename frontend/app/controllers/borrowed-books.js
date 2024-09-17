@@ -1,8 +1,9 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
-
+import { action } from '@ember/object';
 export default class BorrowedBooksController extends Controller {
   @service authenticationService;
+  @service booksService;
 
   get columns() {
     const baseColumns = [
@@ -20,5 +21,13 @@ export default class BorrowedBooksController extends Controller {
       ];
     }
     return baseColumns;
+  }
+
+  @action
+  async returnBooks(selection, datatable) {
+    this.selectedBookIds = selection.map((book) => book.book_id);
+    await this.booksService.returnBooks.perform(this.selectedBookIds);
+    // uncheck all the previously borrowed books
+    datatable.clearSelection();
   }
 }

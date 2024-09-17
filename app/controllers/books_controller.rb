@@ -38,6 +38,11 @@ class BooksController < ApplicationController
   def borrow
     book_ids = params.require(:book_ids)
     books = Book.where(id: book_ids)
+    books.each do |book|
+      if book.quantity > 0
+        book.update(quantity: book.quantity - 1)
+      end
+    end
     current_user.books << books
     render json: { message: "Books borrowed successfully" }, status: :ok
   end
@@ -89,6 +94,10 @@ class BooksController < ApplicationController
 
   def return
     book_ids = params.require(:book_ids)
+    books = Book.where(id: book_ids)
+    books.each do |book|
+        book.update(quantity: book.quantity + 1)
+    end
     BorrowedBook.where(book_id: book_ids).update_all(is_returned: true)
     render json: { message: 'Return status updated successfully for all books' }, status: :ok
   end

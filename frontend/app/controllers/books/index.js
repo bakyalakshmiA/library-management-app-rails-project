@@ -20,6 +20,7 @@ export default class BooksIndexController extends ApplicationController {
     if (this.isAdmin) {
       return [
         ...baseColumns,
+        { label: 'quantity', field: 'quantity', sortable: true },
         { label: 'Actions', field: 'actions', sortable: false },
       ];
     }

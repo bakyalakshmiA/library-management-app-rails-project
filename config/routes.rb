@@ -1,7 +1,7 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
 
-  root to: redirect('/a/home')
+  root to: redirect('/a/books')
 
   mount_ember_app :frontend, to: "/a"
 

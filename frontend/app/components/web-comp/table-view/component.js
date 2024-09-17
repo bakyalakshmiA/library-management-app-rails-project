@@ -20,6 +20,8 @@ export default class WebCompTableViewVComponent extends Component {
   handleAction(selection, datatable) {
     if (this.args.onBorrowBooks) {
       this.args.onBorrowBooks(selection, datatable);
+    } else if (this.args.onReturnBooks) {
+      this.args.onReturnBooks(selection, datatable);
     }
   }
 }

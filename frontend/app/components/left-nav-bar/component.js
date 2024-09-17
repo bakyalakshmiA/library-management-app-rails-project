@@ -4,4 +4,7 @@ export default class LeftNavBarComponent extends Component {
   get isAdmin() {
     return this.args.isAdmin;
   }
+  get currentUser() {
+    return this.args.currentUser;
+  }
 }

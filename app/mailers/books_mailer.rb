@@ -1,0 +1,2 @@
+class BooksMailer < ApplicationMailer
+end
