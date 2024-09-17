@@ -43,7 +43,8 @@ class BooksController < ApplicationController
         book.update(quantity: book.quantity - 1)
       end
     end
-    current_user.books << books
+    borrowed_books = current_user.books << books
+    BookService.call(current_user)
     render json: { message: "Books borrowed successfully" }, status: :ok
   end
 

@@ -23,8 +23,15 @@
                   <button class="btn btn-danger" type="button">Delete</button>
                </div>
               </td>
-             {{else}}
-               <!-- Render data for other columns -->
+            {{else if (eq column.field 'is_returned')}}
+              <td>
+                {{#if row.is_returned}}
+                  returned
+                {{else}}
+                  Borrowed
+                {{/if}}
+              </td>
+            {{else}}
               <td>
                 {{get row column.field}}
               </td>
