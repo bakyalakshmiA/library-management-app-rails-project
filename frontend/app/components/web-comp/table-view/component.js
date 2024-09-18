@@ -17,6 +17,15 @@ export default class WebCompTableViewVComponent extends Component {
   }
 
   @action
+  onBookEdit(bookId) {
+    this.args.onBookEdit(bookId);
+  }
+  @action
+  onBookDelete(bookId) {
+    this.args.onBookDelete(bookId);
+  }
+
+  @action
   handleAction(selection, datatable) {
     if (this.args.onBorrowBooks) {
       this.args.onBorrowBooks(selection, datatable);

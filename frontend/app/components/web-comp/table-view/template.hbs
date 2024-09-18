@@ -19,8 +19,8 @@
              {{#if (eq column.field 'actions')}}
               <td width="17%">
                <div>
-                  <button class="btn btn-warning mr-2" type="button">Edit</button>
-                  <button class="btn btn-danger" type="button">Delete</button>
+                  {{#link-to "books.edit" row.id class="btn btn-warning mr-2"}}Edit{{/link-to}}
+                   <button class="btn btn-danger" type="button"  onclick={{action "onBookDelete" row.id}}  >Delete</button>
                </div>
               </td>
             {{else if (eq column.field 'is_returned')}}

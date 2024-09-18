@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :books, only: [:index, :create, :update, :destroy] do
+  resources :books, only: [:index, :show, :create, :update, :destroy] do
     post 'borrow', on: :collection
     patch 'return', on: :collection
     collection do
