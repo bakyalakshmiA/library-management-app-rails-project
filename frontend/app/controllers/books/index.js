@@ -6,8 +6,10 @@ import { inject as service } from '@ember/service';
 export default class BooksIndexController extends ApplicationController {
   @service authenticationService;
   @service booksService;
+  @service router;
 
   @tracked selectedBookIds = [];
+  @tracked selectedBook = {};
 
   get columns() {
     const baseColumns = [
@@ -34,5 +36,23 @@ export default class BooksIndexController extends ApplicationController {
     await this.booksService.borrowBooks.perform(this.selectedBookIds);
     // uncheck all the previously borrowed books
     datatable.clearSelection();
+  }
+
+  @action
+  async onBookEdit(bookId) {
+    this.selectedBook = await this.booksService.fetchBookDetails.perform(
+      bookId
+    );
+    // this.router.transitionTo('books.edit', bookId);
+
+    // edit page redirection
+  }
+  @action
+  async onBookDelete(bookId) {
+    this.selectedBook = await this.booksService.fetchBookDetails.perform(
+      bookId
+    );
+
+    // edit page   redirection
   }
 }

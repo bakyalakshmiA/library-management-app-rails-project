@@ -24,6 +24,11 @@ class BooksController < ApplicationController
     end
   end
 
+  def show
+    book = Book.find_by(id: params[:id])
+    render json: book, status: :ok
+  end
+
   def update
     book_params = params.require(:book).permit(
       :title,

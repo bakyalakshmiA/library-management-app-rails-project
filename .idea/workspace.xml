@@ -7,10 +7,14 @@
     <list default="true" id="efa356ea-ab9c-4169-bdcd-3a5e303133ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/books_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/books_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mailers/books_mailer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/mailers/books_mailer.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user_mailer/new_user_email.text.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_mailer/new_user_email.text.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dump.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/components/web-comp/table-view/component.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/web-comp/table-view/component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/components/web-comp/table-view/template.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/web-comp/table-view/template.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/controllers/books/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/controllers/books/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/services/books-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/services/books-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/books/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/books/index.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +38,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "dev",
     "last_opened_file_path": "/Users/bangappan/Desktop/library-management-app-rails-project/frontend/app/components/web-comp/table-view",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

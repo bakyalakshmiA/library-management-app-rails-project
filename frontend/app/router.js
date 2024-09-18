@@ -10,7 +10,7 @@ Router.map(function () {
   this.route('books', function () {
     this.route('index', { path: '/' });
     this.route('new');
-    this.route('edit');
+    this.route('edit', { path: '/edit/:id' });
   });
   this.route('home');
 

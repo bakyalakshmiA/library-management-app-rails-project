@@ -87,4 +87,31 @@ export default class BooksServiceService extends Service {
     }
   }).drop())
   returnBooks;
+
+  @(task(function* (bookId) {
+    const csrfToken = document
+      .querySelector('meta[name="csrf-token"]')
+      .getAttribute('content');
+
+    const config = getOwner(this).resolveRegistration('config:environment');
+    const url = `${config.baseURL}/books/${bookId}`;
+    try {
+      const response = yield fetch(url, {
+        method: 'Get',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'X-CSRF-Token': csrfToken,
+        },
+      });
+      if (!response.ok) {
+        return;
+      }
+      return yield response.json();
+    } catch (error) {
+      console.error('Error returning books:', error);
+      return [];
+    }
+  }).drop())
+  fetchBookDetails;
 }
