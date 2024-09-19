@@ -1,6 +1,6 @@
-import Controller from '@ember/controller';
+import ApplicationController from "./application";
 
-export default class UsersController extends Controller {
+export default class UsersController extends ApplicationController {
 
   get columns() {
     return [

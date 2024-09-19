@@ -1,4 +1,4 @@
-<DataTable @content={{model}} @isLoading={{isLoadingModel}} @sort={{sort}} @filter={{filter}} @size={{size}} @enableSizes={{enableSizes}} @lineNumbers={{enableLineNumbers}} as |t|>
+<DataTable @content={{model}} class={{if @isAdmin "admin-table"}} as |t|>
   <t.menu as |menu|>
     <menu.selected as |selection datatable|>
        <PaperButton @onClick={{action "handleAction" selection datatable}} @accent={{true}} @noInk={{true}}> {{actionName}} </PaperButton>

@@ -15,7 +15,7 @@ export default class BooksEditController extends ApplicationController {
   get bookData() {
     return {
       id: this.model.id,
-      isbn: parseInt(this.isbn),
+      isbn: this.isbn,
       title: this.bookTitle,
       author: this.author,
       language: this.language,
@@ -23,10 +23,11 @@ export default class BooksEditController extends ApplicationController {
     };
   }
   @action
-  async updateBook() {
+  async updateBook(e) {
     try {
+      e.preventDefault();
       await this.booksService.updateBook.perform(this.bookData);
-      this.transitionToRoute('books.index');
+      this.router.transitionTo('books.index');
     } catch (error) {
       console.error('Error creating book:', error);
     }

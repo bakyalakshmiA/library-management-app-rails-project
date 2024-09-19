@@ -240,4 +240,60 @@ export default class BooksServiceService extends Service {
     }
   }).drop())
   fetchAllBooks;
+
+  @(task(function* () {
+    const csrfToken = document
+      .querySelector('meta[name="csrf-token"]')
+      .getAttribute('content');
+    const config = getOwner(this).resolveRegistration('config:environment');
+    let url = `${config.baseURL}/books/books_circulations`;
+
+    try {
+      // Fetch data from the determined URL
+      const response = yield fetch(url, {
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': csrfToken, // Include CSRF token if needed
+        },
+        method: 'GET',
+      });
+      if (!response.ok) {
+        return;
+      }
+      const result = yield response.json();
+      return result.books;
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      return [];
+    }
+  }).drop())
+  fetchAllBooksCirculations;
+
+  @(task(function* () {
+    const csrfToken = document
+      .querySelector('meta[name="csrf-token"]')
+      .getAttribute('content');
+    const config = getOwner(this).resolveRegistration('config:environment');
+    let url = `${config.baseURL}/books/borrowed_books`;
+
+    try {
+      // Fetch data from the determined URL
+      const response = yield fetch(url, {
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': csrfToken, // Include CSRF token if needed
+        },
+        method: 'GET',
+      });
+      if (!response.ok) {
+        return;
+      }
+      const result = yield response.json();
+      return result.books;
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      return [];
+    }
+  }).drop())
+  fetchAllBorrowedBooks;
 }

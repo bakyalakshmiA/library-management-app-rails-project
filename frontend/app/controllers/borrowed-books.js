@@ -27,7 +27,7 @@ export default class BorrowedBooksController extends ApplicationController {
   async returnBooks(selection, datatable) {
     this.selectedBookIds = selection.map((book) => book.book_id);
     await this.booksService.returnBooks.perform(this.selectedBookIds);
-    let updatedBooks = await this.booksService.fetchAllAvailableBooks.perform();
+    let updatedBooks = await this.booksService.fetchAllBorrowedBooks.perform();
     set(this, 'model', updatedBooks);
     datatable.clearSelection();
   }

@@ -1,3 +1,12 @@
 .nav-link.active.user-tab {
   background-color: #f75867 !important;
 }
+
+.data-table-pagination-left  {
+  display: none;
+}
+
+.admin-table th:first-of-type,
+.admin-table td:first-of-type {
+  display: none;
+}

@@ -6,29 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="efa356ea-ab9c-4169-bdcd-3a5e303133ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/books_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/books_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/book.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/book.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dump.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/components/left-nav-bar/template.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/left-nav-bar/template.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/components/web-comp/table-view/component.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/web-comp/table-view/component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/components/web-comp/table-view/template.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/web-comp/table-view/template.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/controllers/books/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/controllers/books/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/controllers/books/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/controllers/books/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/controllers/books/new.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/controllers/books/new.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/controllers/borrowed-books.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/controllers/borrowed-books.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/routes/books/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/books/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/routes/books/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/books/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/controllers/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/routes/borrowed-books.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/borrowed-books.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/services/authentication-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/services/authentication-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/services/books-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/services/books-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/styles/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/styles/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/styles/custom.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/templates/books/edit.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/books/edit.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/templates/books/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/books/index.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/templates/books/new.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/books/new.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/templates/borrowed-books.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/borrowed-books.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/users.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/users.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

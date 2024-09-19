@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_09_18_102632) do
+ActiveRecord::Schema.define(version: 2024_09_19_065033) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.integer "isbn", null: false
+    t.string "isbn", null: false
     t.string "title", limit: 50, null: false
     t.string "author", limit: 50, null: false
     t.string "language", limit: 50, null: false

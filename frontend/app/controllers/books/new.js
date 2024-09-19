@@ -25,7 +25,7 @@ export default class BooksNewController extends ApplicationController {
   }
   get bookData() {
     return {
-      isbn: parseInt(this.isbn),
+      isbn: this.isbn,
       title: this.bookTitle,
       author: this.author,
       language: this.language,
