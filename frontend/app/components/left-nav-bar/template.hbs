@@ -12,32 +12,35 @@
       </span>
     </a>
     <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li>
-        <a href="/a/books" class="nav-link active text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#Books"></use></svg>
-          Books
-        </a>
-      </li>
-      <li>
-        <a href="/a/borrowed_books" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#borrowed books"></use></svg>
-            {{#if isAdmin}}
-              Books Circulation
-            {{else}}
-              Borrowed Books
-            {{/if}}
-        </a>
-      </li>
-      {{#if isAdmin}}
-      <li>
-        <a href="/a/users" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#users"></use></svg>
-          Users
-        </a>
-      </li>
-      {{/if}}
-    </ul>
+ <ul class="nav nav-pills flex-column mb-auto">
+   <li class="nav-item">
+     {{#link-to "books.index" class=(if isAdmin "nav-link text-white" "nav-link text-white user-tab") role="tab" data-bs-toggle="pill" data-bs-target="#pills-books"}}
+       <svg class="bi me-2" width="16" height="16"><use xlink:href="#Books"></use></svg>
+       Books
+     {{/link-to}}
+   </li>
+
+   <li class="nav-item">
+     {{#link-to "borrowed_books" class=(if isAdmin "nav-link text-white admin-tab" "nav-link text-white user-tab") role="tab" data-bs-toggle="pill" data-bs-target="#pills-borrowed_books" }}
+       <svg class="bi me-2" width="16" height="16"><use xlink:href="#borrowed-books"></use></svg>
+       {{#if isAdmin}}
+         Book Circulations
+       {{else}}
+         Borrowed Books
+       {{/if}}
+     {{/link-to}}
+   </li>
+
+   {{#if isAdmin}}
+   <li class="nav-item">
+     {{#link-to "users" class="nav-link text-white" role="tab" data-bs-toggle="pill" data-bs-target="#pills-users"}}
+       <svg class="bi me-2" width="16" height="16"><use xlink:href="#users"></use></svg>
+       Users
+     {{/link-to}}
+   </li>
+   {{/if}}
+ </ul>
+
     <hr>
     <div class="dropdown">
       <a class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">

@@ -1,10 +1,15 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_book, only: [ :update, :destroy]
+  before_action :set_book, only: [ :update,:update_status,:destroy]
 
   skip_before_action :verify_authenticity_token, unless: :api_request?
   def index
     books = @books = Book.cached_all_books
+    render json: books, status: :ok
+  end
+
+  def available_books
+    books = @books = Book.cached_available_books(current_user)
     render json: books, status: :ok
   end
 
@@ -20,7 +25,7 @@ class BooksController < ApplicationController
     book = Book.new(book_params)
 
     if book.save
-      render json: book, status: :created
+      render json: book, status: :ok
     end
   end
 
@@ -40,6 +45,15 @@ class BooksController < ApplicationController
     render json: @book, status: :ok
   end
 
+  def update_status
+    if @book.update(status: false)
+      Book.flush_cache
+      render json: @book, status: :ok
+    else
+      render json: { error: @book.errors.full_messages }, status: :unprocessable_entity # Return errors if the update fails
+    end
+  end
+
   def borrow
     book_ids = params.require(:book_ids)
     books = Book.where(id: book_ids)
@@ -53,29 +67,29 @@ class BooksController < ApplicationController
     render json: { message: "Books borrowed successfully" }, status: :ok
   end
 
-    def books_circulations
-      borrowed_books = BorrowedBook.includes(:book, :user).all
-      render json: {
-        message: 'Books borrowed retrieved',
-        books: borrowed_books.map do |borrowed_book|
-          {
-            book_id: borrowed_book.book_id,
-            title: borrowed_book.book.title,
-            author: borrowed_book.book.author,
-            isbn: borrowed_book.book.isbn,
-            language: borrowed_book.book.language,
-            borrow_date: borrowed_book.borrow_date,
-            return_date: borrowed_book.return_date,
-            is_returned: borrowed_book.is_returned,
-            quantity: borrowed_book.book.quantity,
-            user_id: borrowed_book.user_id,
-            user_name: borrowed_book.user.name,
-            user_email: borrowed_book.user.email,
-            user_phone_number: borrowed_book.user.phone_number,
-          }
-        end
-      }, status: :ok
-    end
+  def books_circulations
+    borrowed_books = BorrowedBook.includes(:book, :user).all
+    render json: {
+      message: 'Books borrowed retrieved',
+      books: borrowed_books.map do |borrowed_book|
+        {
+          book_id: borrowed_book.book_id,
+          title: borrowed_book.book.title,
+          author: borrowed_book.book.author,
+          isbn: borrowed_book.book.isbn,
+          language: borrowed_book.book.language,
+          borrow_date: borrowed_book.borrow_date,
+          return_date: borrowed_book.return_date,
+          is_returned: borrowed_book.is_returned,
+          quantity: borrowed_book.book.quantity,
+          user_id: borrowed_book.user_id,
+          user_name: borrowed_book.user.name,
+          user_email: borrowed_book.user.email,
+          user_phone_number: borrowed_book.user.phone_number,
+        }
+      end
+    }, status: :ok
+  end
 
   def borrowed_books
     # get all borrowed book_ids
@@ -114,6 +128,10 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit(:isbn, :title, :author, :language ,:quantity)
+  end
+
+  def destroy
+    # code here
   end
 
   private

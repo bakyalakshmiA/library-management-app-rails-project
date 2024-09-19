@@ -5,6 +5,7 @@ import ApplicationController from '../application';
 
 export default class BooksNewController extends ApplicationController {
   @service booksService;
+  @service router;
 
   @tracked bookTitle = '';
   @tracked author = '';
@@ -33,10 +34,12 @@ export default class BooksNewController extends ApplicationController {
   }
 
   @action
-  async submitBook() {
+  async submitBook(e) {
+    e.preventDefault();
     try {
       const result = await this.booksService.createBook.perform(this.bookData);
       console.log('Book created successfully:', result);
+      this.router.transitionTo('books.index');
     } catch (error) {
       console.error('Error creating book:', error);
     }

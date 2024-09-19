@@ -1,4 +1,4 @@
-import { action } from '@ember/object';
+import { action, set } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import ApplicationController from '../application';
 import { inject as service } from '@ember/service';
@@ -34,25 +34,15 @@ export default class BooksIndexController extends ApplicationController {
   async borrowBooks(selection, datatable) {
     this.selectedBookIds = selection.map((book) => book.id);
     await this.booksService.borrowBooks.perform(this.selectedBookIds);
-    // uncheck all the previously borrowed books
+    let updatedBooks = await this.booksService.fetchAllAvailableBooks.perform();
+    set(this, 'model', updatedBooks);
     datatable.clearSelection();
   }
 
   @action
-  async onBookEdit(bookId) {
-    this.selectedBook = await this.booksService.fetchBookDetails.perform(
-      bookId
-    );
-    // this.router.transitionTo('books.edit', bookId);
-
-    // edit page redirection
-  }
-  @action
   async onBookDelete(bookId) {
-    this.selectedBook = await this.booksService.fetchBookDetails.perform(
-      bookId
-    );
-
-    // edit page   redirection
+    await this.booksService.updateBookStatus.perform(bookId);
+    let updatedBooks = this.model.filter((book) => book.id !== bookId);
+    set(this, 'model', updatedBooks);
   }
 }

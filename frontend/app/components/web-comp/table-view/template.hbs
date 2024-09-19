@@ -1,4 +1,4 @@
-<DataTable @content={{model}} @isLoading={{isLoadingModel}} @sort={{sort}} @page={{page}} @filter={{filter}} @size={{size}} @enableSizes={{enableSizes}} @lineNumbers={{enableLineNumbers}} as |t|>
+<DataTable @content={{model}} @isLoading={{isLoadingModel}} @sort={{sort}} @filter={{filter}} @size={{size}} @enableSizes={{enableSizes}} @lineNumbers={{enableLineNumbers}} as |t|>
   <t.menu as |menu|>
     <menu.selected as |selection datatable|>
        <PaperButton @onClick={{action "handleAction" selection datatable}} @accent={{true}} @noInk={{true}}> {{actionName}} </PaperButton>
@@ -20,7 +20,7 @@
               <td width="17%">
                <div>
                   {{#link-to "books.edit" row.id class="btn btn-warning mr-2"}}Edit{{/link-to}}
-                   <button class="btn btn-danger" type="button"  onclick={{action "onBookDelete" row.id}}  >Delete</button>
+                   <button class="btn btn-danger" type="button" onclick={{action "onBookDelete" row.id}}>Delete</button>
                </div>
               </td>
             {{else if (eq column.field 'is_returned')}}

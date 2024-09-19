@@ -16,13 +16,13 @@ export default class WebCompTableViewVComponent extends Component {
     return this.args.actionName;
   }
 
-  @action
-  onBookEdit(bookId) {
-    this.args.onBookEdit(bookId);
+  get isAdmin() {
+    return this.args.isAdmin;
   }
+
   @action
-  onBookDelete(bookId) {
-    this.args.onBookDelete(bookId);
+  onBookDelete(BookId) {
+    this.args.onBookDelete(BookId);
   }
 
   @action

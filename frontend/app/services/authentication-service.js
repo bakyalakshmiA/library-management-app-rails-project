@@ -20,6 +20,7 @@ export default class AuthenticationServiceService extends Service {
           'Content-Type': 'application/json',
           Accept: 'application/json',
           'X-CSRF-Token': csrfToken,
+          'X-Client-Address': this.getClientAddress(),
         },
       });
 
@@ -33,5 +34,9 @@ export default class AuthenticationServiceService extends Service {
     } catch (error) {
       console.error('Error loading current user:', error);
     }
+  }
+  getClientAddress() {
+    // Placeholder for client address; this should ideally be handled server-side
+    return '127.0.0.1'; // Example placeholder
   }
 }

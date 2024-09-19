@@ -1,7 +1,7 @@
 {{page-title "BorrowedBooks"}}
   <div class="d-flex align-items-center">
     {{#if isAdmin}}
-        <h2>Books Circulations</h2>
+        <h2>Book Circulations</h2>
      {{else}}
         <h2>My Borrowed Books</h2>
      {{/if}}
@@ -9,6 +9,6 @@
    {{#if isAdmin}}
    <WebComp::TableView @model={{model}} @columns={{columns}} @rows={{rows}} />
    {{else}}
-   <WebComp::TableView @model={{model}} @columns={{columns}} @rows={{rows}} @actionName={{"return"}} @onReturnBooks={{this.returnBooks}}/>
+   <WebComp::TableView @model={{model}} @columns={{columns}} @rows={{rows}} @actionName={{"return"}} @isAdmin={{isAdmin}} @onReturnBooks={{this.returnBooks}}/>
    {{/if}}
 {{outlet}}

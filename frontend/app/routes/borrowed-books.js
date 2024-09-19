@@ -1,8 +1,14 @@
 import Route from '@ember/routing/route';
 import { getOwner } from '@ember/application';
 import fetch from 'fetch';
+import { inject as service } from '@ember/service';
 
 export default class BorrowedBooksRoute extends Route {
+  @service authenticationService;
+  async beforeModel() {
+    await this.authenticationService.loadCurrentUser();
+  }
+
   async model() {
     const config = getOwner(this).resolveRegistration('config:environment');
     const url = `${config.baseURL}/books/books_circulations`;

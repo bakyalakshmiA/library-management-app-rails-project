@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_09_09_195904) do
+ActiveRecord::Schema.define(version: 2024_09_18_102632) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "isbn", null: false
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2024_09_09_195904) do
     t.integer "quantity", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 1
     t.index ["isbn"], name: "index_books_on_isbn", unique: true
   end
 

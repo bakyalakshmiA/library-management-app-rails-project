@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show, :create, :update, :destroy] do
     post 'borrow', on: :collection
     patch 'return', on: :collection
+    patch :update_status, on: :member
     collection do
+      get 'available_books'
       get 'borrowed_books'
       get 'books_circulations'
     end

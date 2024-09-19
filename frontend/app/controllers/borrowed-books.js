@@ -1,7 +1,7 @@
-import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
-import { action } from '@ember/object';
-export default class BorrowedBooksController extends Controller {
+import { action, set } from '@ember/object';
+import ApplicationController from './application';
+export default class BorrowedBooksController extends ApplicationController {
   @service authenticationService;
   @service booksService;
 
@@ -27,7 +27,8 @@ export default class BorrowedBooksController extends Controller {
   async returnBooks(selection, datatable) {
     this.selectedBookIds = selection.map((book) => book.book_id);
     await this.booksService.returnBooks.perform(this.selectedBookIds);
-    // uncheck all the previously borrowed books
+    let updatedBooks = await this.booksService.fetchAllAvailableBooks.perform();
+    set(this, 'model', updatedBooks);
     datatable.clearSelection();
   }
 }
