@@ -1,4 +1,4 @@
-import ApplicationController from "./application";
+import ApplicationController from './application';
 
 export default class UsersController extends ApplicationController {
 

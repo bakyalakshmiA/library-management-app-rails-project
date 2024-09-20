@@ -57,13 +57,34 @@ class BooksController < ApplicationController
   def borrow
     book_ids = params.require(:book_ids)
     books = Book.where(id: book_ids)
+
+    # Get the current time
+    current_time = Time.current
+
+    # Calculate the return date (28 days from now)
+    return_date = current_time + 28.days
+
     books.each do |book|
       if book.quantity > 0
         book.update(quantity: book.quantity - 1)
+
+        borrowed_book = BorrowedBook.find_by(user: current_user, book: book)
+
+        if borrowed_book
+          # Update the return date if the record exists
+          borrowed_book.update(return_date: return_date)
+          puts "Updated existing borrowed book"
+        else
+          # Create a new record if it does not exist
+          BorrowedBook.create(user: current_user, book: book, return_date: return_date)
+          puts "Created new borrowed book record"
+        end
+
       end
     end
-    borrowed_books = current_user.books << books
-    BookService.call(current_user)
+    puts "here we borrowed"
+
+    BookService.call(current_user, book_ids ,:borrow)
     render json: { message: "Books borrowed successfully" }, status: :ok
   end
 
@@ -119,6 +140,7 @@ class BooksController < ApplicationController
         book.update(quantity: book.quantity + 1)
     end
     BorrowedBook.where(book_id: book_ids).update_all(is_returned: true)
+    BookService.call(current_user, book_ids ,:return)
     render json: { message: 'Return status updated successfully for all books' }, status: :ok
   end
 

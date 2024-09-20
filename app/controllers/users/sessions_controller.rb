@@ -17,9 +17,13 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def create
+    super do |resource|
+      puts "here in register method"
+      Rails.logger.debug "Entering UserRegistrationService.call with resource: #{resource.inspect}"
+      UserRegistrationService.call(resource)
+    end
+  end
 
   # DELETE /resource/sign_out
   # def destroy

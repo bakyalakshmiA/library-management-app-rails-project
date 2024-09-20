@@ -1,0 +1,2 @@
+class ReturnBooksEmailMailer < ApplicationMailer
+end

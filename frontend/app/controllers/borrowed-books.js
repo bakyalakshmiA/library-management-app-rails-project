@@ -7,10 +7,10 @@ export default class BorrowedBooksController extends ApplicationController {
 
   get columns() {
     const baseColumns = [
-      { label: 'ISBN', field: 'isbn', sortable: true },
-      { label: 'Title', field: 'title', sortable: true },
+      { label: 'ISBN', field: 'isbn', sortable: false },
+      { label: 'Title', field: 'title', sortable: false },
       { label: 'borrow date', field: 'borrow_date', sortable: false },
-      { label: 'return date', field: 'return_date', sortable: true },
+      { label: 'return date', field: 'return_date', sortable: false },
     ];
 
     if (this.authenticationService.role === 'admin') {

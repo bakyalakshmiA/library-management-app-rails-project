@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_09_19_065033) do
+ActiveRecord::Schema.define(version: 2024_09_19_100102) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "isbn", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2024_09_19_065033) do
   create_table "borrowed_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "book_id"
-    t.datetime "borrow_date"
+    t.datetime "borrow_date", default: -> { "CURRENT_TIMESTAMP" }
     t.datetime "return_date"
     t.boolean "is_returned", default: false
     t.datetime "created_at", null: false

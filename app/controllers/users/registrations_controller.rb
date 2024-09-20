@@ -9,9 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  puts "here in create user post controller"
   def create
-    puts "in create user"
     super do |resource|
       puts "here in register method"
       Rails.logger.debug "Entering UserRegistrationService.call with resource: #{resource.inspect}"

@@ -31,7 +31,16 @@
                   Borrowed
                 {{/if}}
               </td>
-            {{else}}
+            {{else if (eq column.field 'borrow_date')}}
+                <td>
+                  {{moment-format (get row column.field) 'MM/DD/YYYY'}}
+                </td>
+
+              {{else if (eq column.field 'return_date')}}
+                <td>
+                  {{moment-format (get row column.field) 'MM/DD/YYYY'}}
+                </td>
+              {{else}}
               <td>
                 {{get row column.field}}
               </td>
